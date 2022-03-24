@@ -18,7 +18,9 @@ public class MainController {
 	@GetMapping("")
 	public String getPersons(Model m)
 	{
+		Person p=new Person();
 		m.addAttribute("personslist", persons);
+		m.addAttribute("person",p);
 		return  "Persons";
 	}
 	
