@@ -7,6 +7,8 @@ import com.th.classes.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
@@ -23,7 +25,14 @@ public class MainController {
 		m.addAttribute("person",p);
 		return  "Persons";
 	}
-	
+	@PostMapping("add")
+	public String addPerson(@ModelAttribute(name = "person") Person p,Model m)
+	{
+		persons.add(p);
+		
+		
+		return "redirect:/"; // redirection vers le url ""=> localhost:8080/
+	}
 	
 	
 }
