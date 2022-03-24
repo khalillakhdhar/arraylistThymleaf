@@ -17,7 +17,7 @@ public class MainController {
 	persons.add(new Person("Bill", "Gates")); // ajout dans la liste
 	persons.add(new Person("Steve", "Jobs"));
 	}
-	@GetMapping("")
+	@GetMapping("/page")
 	public String getPersons(Model m)
 	{
 		Person p=new Person();
@@ -31,7 +31,7 @@ public class MainController {
 		persons.add(p);
 		
 		
-		return "redirect:/"; // redirection vers le url ""=> localhost:8080/
+		return "redirect:/page"; // redirection vers le url ""=> localhost:8080/
 	}
 	
 	
